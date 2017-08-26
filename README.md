@@ -10,3 +10,10 @@ The goal here is to decrypt the initially given (IV,ciphertext) pair.
 ## discretelogMe
 This one is created by me, tricky but not as hard as the rest of the challenges<br>
 Given h=g^d mod p, calculate d
+
+## Hints
+Run:
+
+	fgrep <keygen,break,discrete> hints.txt
+	
+To get some hints for a particular challenge
