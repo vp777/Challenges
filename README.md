@@ -1,4 +1,4 @@
-# Some interesting challenges i found in the last year
+# Some interesting challenges I found in the last year
 
 ## keygenMe
 The objective is to create a key generator.
@@ -9,7 +9,7 @@ The goal here is to decrypt the initially given (IV,ciphertext) pair.
 
 ## discretelogMe
 This one is created by me, tricky but not as hard as the rest of the challenges<br>
-Given h=g^d mod p, calculate d
+Given h=g^d mod p, calculate d. (Solution in about 30 seconds in [cocalc](https://cocalc.com))
 
 ## Hints
 Run:
