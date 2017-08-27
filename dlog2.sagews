@@ -28,7 +28,7 @@ flist=[ZZ(i^j) for i,j in list(factor(p-1)) if ZZ(i^j)<1000000000]
 flist.append(2) #for dlog1
 dlogs=[discrete_log(h^((p-1)//k), g^((p-1)//k)) for k in flist]
 
-partial_mod=crt(dlogs, [_ for _ in flist])
+partial_mod=crt(dlogs, flist)
 partial_div=mul(flist)
 
 recovered_d, recovered_bits=extract_bits(g, h, p)
