@@ -42,7 +42,7 @@ if g^d!=h:
     for i in xrange(1<<bruterange):
         d=ZZ(i<<recovered_bits)+recovered_d
         if Mod(d, partial_div)==partial_mod and g^d==h:
-            print "found at index {}\nd={}".format(i, d)
+            print "found {0}:{0:b}:{1}".format(i, len("{:b}".format(i)))
             break
 
-print "Found {} bits".format(len("{:b}".format(d))-recovered_bits)
+print "d={}".format(d)
