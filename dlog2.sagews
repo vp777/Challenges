@@ -25,6 +25,7 @@ h=Mod(17736996649884328182590427370285572382433392768846678259975083374913068098
 g=Mod(6, p)
 
 flist=[ZZ(i^j) for i,j in list(factor(p-1)) if ZZ(i^j)<1000000000]
+flist.append(2) #for dlog1
 dlogs=[discrete_log(h^((p-1)//k), g^((p-1)//k)) for k in flist]
 
 partial_mod=crt(dlogs, [_ for _ in flist])
@@ -32,15 +33,16 @@ partial_div=mul(flist)
 
 recovered_d, recovered_bits=extract_bits(g, h, p)
 
-bruterange=len("{:b}".format(p))-recovered_bits
-if bruterange>50 or bruterange<0:
-    print "Setting range from {} to 50".format(bruterange)
-    bruterange=50
+d=recovered_d
+if g^d!=h:
+    bruterange=len("{:b}".format(p))-recovered_bits
+    if bruterange>50:
+        print "Setting range from {} to 50".format(bruterange)
+        bruterange=50
+    for i in xrange(1<<bruterange):
+        d=ZZ(i<<recovered_bits)+recovered_d
+        if Mod(d, partial_div)==partial_mod and g^d==h:
+            print "found at index {}\nd={}".format(i, d)
+            break
 
-for i in xrange(1<<bruterange):
-    d=ZZ(i<<recovered_bits)+recovered_d
-    if d%partial_div==partial_mod and g^d==h:
-        print "found at index {}\nd={}".format(i, d)
-        break
-
-print g^d==h
+print "Found {} bits".format(len("{:b}".format(d))-recovered_bits)
