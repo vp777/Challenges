@@ -9,11 +9,11 @@ The goal here is to decrypt the initially given (IV,ciphertext) pair.
 
 ## dlog1
 This one is created by me, tricky but not as hard as the rest of the challenges<br>
-Given h=g^d mod p, calculate d. (Solution in about 30 seconds in [cocalc](https://cocalc.com))
+Given h=g^d mod p, calculate d. (Solution in about 30 seconds with sage in [cocalc](https://cocalc.com))
 
 ## dlog2
 Small extension of dlog1<br>
-Given h=g^d mod p, calculate d. (Solution in about 90 seconds in [cocalc](https://cocalc.com))
+Given h=g^d mod p, calculate d. (Solution in about 90 seconds with sage in [cocalc](https://cocalc.com))
 
 ## Hints
 Run:
