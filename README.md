@@ -13,7 +13,7 @@ Given h=g^d mod p, calculate d. (Solution in about 30 seconds with sage in [coca
 
 ## dlog2
 Small extension of dlog1<br>
-Given h=g^d mod p, calculate d. (Solution in about 90 seconds with sage in [cocalc](https://cocalc.com))
+Given h=g^d mod p, calculate d. (Solution in about 90 seconds with sage in [cocalc](https://cocalc.com))<br>
 I have added the solution to dlog2. dlog1 should be similar
 
 ## Hints
